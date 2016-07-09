@@ -1,7 +1,6 @@
 var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
-//var memoryClean = require('memory.clean');
 var colonyReviveDead = require('colony.reviveDead');
 
 module.exports.loop = function () {
