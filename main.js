@@ -7,8 +7,9 @@ module.exports.loop = function () {
     
     colonyReviveDead.run();
     
-    for (var currentRoom in Game.rooms) {
+    for (var roomName in Game.rooms) {
 		var lowestHealth = 9999999999;
+		var currentRoom = Game.rooms[roomName];
 		var structures = currentRoom.find(FIND_STRUCTURES);
 		for (var structureID in structures) {
 			var structure = structures[structureID];
