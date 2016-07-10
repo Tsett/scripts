@@ -2,6 +2,7 @@ var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 var colonyReviveDead = require('colony.reviveDead');
+var tower = require('role.tower');
 
 module.exports.loop = function () {
     
@@ -19,6 +20,8 @@ module.exports.loop = function () {
 		}
 		currentRoom.memory.lowestHealth=lowestHealth;
     }
+    
+    tower.run();
 
     for(var name in Game.creeps) {
         var creep = Game.creeps[name];
