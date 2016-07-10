@@ -20,7 +20,8 @@ module.exports = {
     
             var closestHostile = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
             if(closestHostile) {
-                tower.attack(closestHostile);
+            	var result = tower.attack(closestHostile);
+            	Game.notify("Attacking enemy " + closestHostile + " with " + result, 5);
             }
         }
     }
