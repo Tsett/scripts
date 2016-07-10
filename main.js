@@ -7,17 +7,17 @@ module.exports.loop = function () {
     
     colonyReviveDead.run();
     
-    var lowestHealth = 9999999999;
-    var currentRoom = Game.rooms[Game.spawns.Serka.pos.roomName];
-    var structures = currentRoom.find(FIND_STRUCTURES);
-    for (var structureID in structures) {
-        var structure = structures[structureID];
-        if (structure.hits < structure.hitsMax && structure.hits < lowestHealth) {
-            lowestHealth = structure.hits;
-        }
+    for (var currentRoom in Game.rooms) {
+		var lowestHealth = 9999999999;
+		var structures = currentRoom.find(FIND_STRUCTURES);
+		for (var structureID in structures) {
+			var structure = structures[structureID];
+			if (structure.hits < structure.hitsMax && structure.hits < lowestHealth) {
+				lowestHealth = structure.hits;
+			}
+		}
+		currentRoom.memory.lowestHealth=lowestHealth;
     }
-    currentRoom.memory.lowestHealth=lowestHealth;
-    
 
     for(var name in Game.creeps) {
         var creep = Game.creeps[name];
