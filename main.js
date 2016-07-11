@@ -3,7 +3,7 @@ var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 var colonyReviveDead = require('colony.reviveDead');
 var tower = require('role.tower');
-
+//test simulator
 module.exports.loop = function () {
     
     colonyReviveDead.run();
